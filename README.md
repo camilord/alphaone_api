@@ -1,5 +1,5 @@
-# alphaone_api
-AlphaOne API Library - Use this library to integrate with AlphaOne Building Consent System
+# AlphaOne API Library
+ Use this library to integrate with AlphaOne Building Consent System
 
 # Usage
 ```php
@@ -8,8 +8,6 @@ AlphaOne API Library - Use this library to integrate with AlphaOne Building Cons
 define('CONFIG_FILE', dirname(__DIR__).'/config.json');
 
 $obj = new AlphaOneAPI(CONFIG_FILE);
-$this->assertTrue(($obj instanceof AlphaOneAPI));
-
 $data = $obj->getProjectDetails(12);
 print_r($data);
 
