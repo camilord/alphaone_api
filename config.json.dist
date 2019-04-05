@@ -1,0 +1,8 @@
+{
+  "AlphaOne": {
+    "CouncilUrl": "https://COUNCIL.abcs.co.nz",
+    "APIUrl": "https://COUNCIL-api.abcs.co.nz",
+    "Username": "my-username-here",
+    "Key": "secret-key-here"
+  }
+}
