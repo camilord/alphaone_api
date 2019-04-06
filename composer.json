@@ -1,6 +1,6 @@
 {
   "name": "camilord/alphaone_api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/camilord/alphaone_api",
   "description": "AlphaOne API Library",
   "type": "library",
@@ -20,9 +20,7 @@
   "autoload": {
     "psr-4": {
       "camilord\\AlphaOneAPI\\": "./src/AlphaOneAPI/"
-    },
-    "ext-json": "*",
-    "ext-curl": "*"
+    }
   },
   "require-dev": {
     "phpunit/phpunit": "^5",
