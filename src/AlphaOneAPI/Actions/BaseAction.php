@@ -16,7 +16,7 @@ use camilord\AlphaOneAPI\APIConfig;
 
 /**
  * Class BaseAction
- * @package AlphaOneAPI\Actions
+ * @package camilord\AlphaOneAPI\Actions
  */
 abstract class BaseAction
 {
@@ -49,8 +49,16 @@ abstract class BaseAction
     /**
      * @return string
      */
-    public function getCredentialsUrlParam() {
+    public function getCredentialUrlParams() {
         return "?username={$this->getConfig()->getUsername()}&session_key={$this->getConfig()->getSessionKey()}";
+    }
+
+    public function getCredentialHeaderParams() {
+        $headers = [
+            "Auth-username: {$this->getConfig()->getUsername()}",
+            "Auth-session-key: {$this->getConfig()->getSessionKey()}",
+        ];
+        return $headers;
     }
 
     /**

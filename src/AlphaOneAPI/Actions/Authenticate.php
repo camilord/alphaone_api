@@ -17,7 +17,7 @@ use camilord\utilus\Net\Qurl;
 
 /**
  * Class Authenticate
- * @package AlphaOneAPI\Actions
+ * @package camilord\AlphaOneAPI\Actions
  */
 class Authenticate extends BaseAction implements ActionInterface
 {

@@ -14,7 +14,7 @@ namespace AlphaOneAPI;
 
 /**
  * Class FormConstants
- * @package AlphaOneAPI
+ * @package camilord\AlphaOneAPI
  */
 class FormConstants
 {

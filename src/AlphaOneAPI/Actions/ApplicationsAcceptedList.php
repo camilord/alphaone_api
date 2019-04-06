@@ -14,11 +14,11 @@ namespace camilord\AlphaOneAPI\Actions;
 
 use camilord\AlphaOneAPI\APIConfig;
 use camilord\AlphaOneAPI\APIConstants;
-use camilord\utilus\Net\Qurl;
+use camilord\AlphaOneAPI\Utils\CurlUtil;
 
 /**
  * Class ApplicationsAcceptedList
- * @package AlphaOneAPI\Actions
+ * @package camilord\AlphaOneAPI\Actions
  */
 class ApplicationsAcceptedList extends BaseAction implements ActionInterface
 {
@@ -47,10 +47,8 @@ class ApplicationsAcceptedList extends BaseAction implements ActionInterface
             $offset = (int)$this->offset;
             $url .= "/{$offset}";
         }
-        // api credentials
-        $url .= $this->getCredentialsUrlParam();
 
-        $this->setServerResponse(Qurl::get($url));
+        $this->setServerResponse(CurlUtil::get($url, false, $this->getCredentialHeaderParams()));
         return $this;
     }
 

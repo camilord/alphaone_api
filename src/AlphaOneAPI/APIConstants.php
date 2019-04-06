@@ -14,7 +14,7 @@ namespace camilord\AlphaOneAPI;
 
 /**
  * Class APIConstants
- * @package AlphaOneAPI
+ * @package camilord\AlphaOneAPI
  */
 class APIConstants
 {
@@ -24,7 +24,7 @@ class APIConstants
 
     const GET_APP_ACCEPTED = "/v1/projects/accepted";
 
-    const GET_PROJECTS_READY = "/v1/projects/ready/all/{FORM_ID}";
+    const GET_PROJECTS_READY = "/v1/projects/ready/{FORM_ID}";
 
     const MARK_PROJECT_DONE = "/v1/projects/ready/{ALPHA_ID}/mark";
 
@@ -34,7 +34,7 @@ class APIConstants
      * ============ COUNCIL BASE URL ===========================================
      */
 
-    const GET_DOCUMENTS_LIST = "/a2/document-export/{ALPHA_ID/list";
+    const GET_DOCUMENTS_LIST = "/a2/document-export/{ALPHA_ID}/list";
 
-    const GET_DOCUMENTS_IN_STAGES = "/a2/document-export/{ALPHA_ID/stages";
+    const GET_DOCUMENTS_IN_STAGES = "/a2/document-export/{ALPHA_ID}/stages";
 }

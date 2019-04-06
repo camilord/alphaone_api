@@ -27,3 +27,5 @@ Array
         )
 )
 ```
+
+For the detailed documentation of the AlphaOne API, please contact AlphaOne support team or visit at www.abcs.co.nz

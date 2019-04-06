@@ -6,34 +6,33 @@
  *             www.camilord.com
  *             me@camilord.com
  * Date: 6/04/2019
- * Time: 1:23 AM
+ * Time: 8:41 PM
  * ----------------------------------------------------
  */
 
 namespace camilord\AlphaOneAPI\Actions;
 
+
 use camilord\AlphaOneAPI\APIConfig;
 use camilord\AlphaOneAPI\APIConstants;
 use camilord\AlphaOneAPI\Utils\CurlUtil;
 
-/**
- * Class ProjectDetails
- * @package camilord\AlphaOneAPI\Actions
- */
-class ProjectDetails extends BaseAction implements ActionInterface
+class InvoiceDetails extends BaseAction implements ActionInterface
 {
-
-    private $alpha_id;
+    /**
+     * @var int
+     */
+    private $invoice_id;
 
     /**
-     * ProjectDetails constructor.
-     * @param $alpha_id
+     * ApplicationsAcceptedList constructor.
+     * @param int $invoice_id
      * @param APIConfig $config
      */
-    public function __construct($alpha_id, APIConfig $config)
+    public function __construct($invoice_id, APIConfig $config)
     {
         parent::__construct($config);
-        $this->alpha_id = $alpha_id;
+        $this->invoice_id = $invoice_id;
     }
 
     /**
@@ -41,8 +40,10 @@ class ProjectDetails extends BaseAction implements ActionInterface
      */
     public function execute()
     {
-        $url = $this->getConfig()->getApiUrl();
-        $url .= str_replace('{ALPHA_ID}', $this->alpha_id, APIConstants::GET_APPLICATION_FULL);
+        // base api url
+        $url = $this->getConfig()->getApiUrl() . APIConstants::GET_INVOICE;
+        // set INVOICE_ID
+        $url = str_replace("{INVOICE_ID}", $this->invoice_id, $url);
 
         $this->setServerResponse(CurlUtil::get($url, false, $this->getCredentialHeaderParams()));
         return $this;

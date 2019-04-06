@@ -14,7 +14,7 @@ namespace camilord\AlphaOneAPI\Actions;
 
 /**
  * Interface ActionInterface
- * @package AlphaOneAPI\Actions
+ * @package camilord\AlphaOneAPI\Actions
  */
 interface ActionInterface
 {

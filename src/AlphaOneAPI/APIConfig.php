@@ -16,7 +16,7 @@ use camilord\utilus\Data\ArrayUtilus;
 
 /**
  * Class APIConfig
- * @package AlphaOneAPI
+ * @package camilord\AlphaOneAPI
  */
 class APIConfig
 {
@@ -47,6 +47,13 @@ class APIConfig
         } else {
             throw new \Exception("Error! AlphaOne API Configuration not found.");
         }
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCouncilUrl() {
+        return @$this->config_array['CouncilUrl'];
     }
 
     /**

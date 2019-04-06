@@ -17,23 +17,22 @@ use camilord\AlphaOneAPI\APIConstants;
 use camilord\AlphaOneAPI\Utils\CurlUtil;
 
 /**
- * Class ProjectDetails
+ * Class ProjectsReadyOn
  * @package camilord\AlphaOneAPI\Actions
  */
-class ProjectDetails extends BaseAction implements ActionInterface
+class ProjectsReadyOn extends BaseAction implements ActionInterface
 {
-
-    private $alpha_id;
+    private $form_id = 'all';
 
     /**
-     * ProjectDetails constructor.
-     * @param $alpha_id
+     * ApplicationsAcceptedList constructor.
+     * @param $form_id
      * @param APIConfig $config
      */
-    public function __construct($alpha_id, APIConfig $config)
+    public function __construct($form_id, APIConfig $config)
     {
         parent::__construct($config);
-        $this->alpha_id = $alpha_id;
+        $this->form_id = $form_id;
     }
 
     /**
@@ -41,8 +40,11 @@ class ProjectDetails extends BaseAction implements ActionInterface
      */
     public function execute()
     {
-        $url = $this->getConfig()->getApiUrl();
-        $url .= str_replace('{ALPHA_ID}', $this->alpha_id, APIConstants::GET_APPLICATION_FULL);
+        // base api url
+        $url = $this->getConfig()->getApiUrl() . APIConstants::GET_PROJECTS_READY;
+        // set form id
+        $form_id = is_numeric($this->form_id) ? (int)$this->form_id : 'all';
+        $url = str_replace("{FORM_ID}", $form_id, $url);
 
         $this->setServerResponse(CurlUtil::get($url, false, $this->getCredentialHeaderParams()));
         return $this;
