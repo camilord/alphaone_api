@@ -52,7 +52,7 @@ class AlphaOneAPI
         $auth = new Authenticate($this->config);
         $response = $auth->execute()->getResponse();
 
-        if ($response['status'] == 'ok') {
+        if (@$response['status'] == 'ok') {
             $this->config->setSessionKey($response['session_key']);
         } else {
             throw new \Exception("Authentication Error! Invalid API Credentials.");
@@ -67,7 +67,7 @@ class AlphaOneAPI
         $project = new ProjectDetails($alpha_id, $this->config);
         $response = $project->execute()->getResponse();
 
-        return ($response['Result'] == true ? $response['Data'] : false);
+        return (@$response['Result'] == true ? $response['Data'] : false);
     }
 
     /**
@@ -78,7 +78,7 @@ class AlphaOneAPI
         $appAccepted = new ApplicationsAcceptedList($offset, $this->config);
         $response = $appAccepted->execute()->getResponse();
 
-        return ($response['Result'] == true ? $response['Data'] : false);
+        return (@$response['Result'] == true ? $response['Data'] : false);
     }
 
     /**
@@ -89,7 +89,7 @@ class AlphaOneAPI
         $projectReady = new ProjectsReadyOn($form_id, $this->config);
         $response = $projectReady->execute()->getResponse();
 
-        return ($response['Result'] == true ? $response['Data'] : false);
+        return (@$response['Result'] == true ? $response['Data'] : false);
     }
 
     /**
@@ -116,7 +116,7 @@ class AlphaOneAPI
     public function getInvoice($invoice_id) {
         $obj = new InvoiceDetails($invoice_id, $this->config);
         $response = $obj->execute()->getResponse();
-        return $response['Result'] === true ? $response['Data'] : false;
+        return @$response['Result'] === true ? $response['Data'] : false;
     }
 
     /**
