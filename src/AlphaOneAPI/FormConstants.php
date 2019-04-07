@@ -10,7 +10,7 @@
  * ----------------------------------------------------
  */
 
-namespace AlphaOneAPI;
+namespace camilord\AlphaOneAPI;
 
 /**
  * Class FormConstants
