@@ -46,12 +46,12 @@ abstract class BaseAction
         return $this->config;
     }
 
-    /**
+    /*
      * @return string
-     */
+     *
     public function getCredentialUrlParams() {
         return "?username={$this->getConfig()->getUsername()}&session_key={$this->getConfig()->getSessionKey()}";
-    }
+    }*/
 
     public function getCredentialHeaderParams() {
         $headers = [

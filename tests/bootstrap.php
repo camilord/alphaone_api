@@ -12,4 +12,5 @@
 
 $loader = require dirname(__DIR__) . '/vendor/autoload.php';
 
+define('TEST_DIR', __DIR__);
 define('CONFIG_FILE', dirname(__DIR__).'/config.json');

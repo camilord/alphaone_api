@@ -30,6 +30,14 @@ class AlphaOneAPITest extends TestCase
 
     /**
      * @throws \Exception
+     * @expectedException \Exception
+     */
+    public function test_exception2() {
+        $obj = new AlphaOneAPI(TEST_DIR."/files/config_test1.json");
+    }
+
+    /**
+     * @throws \Exception
      */
     public function test_init() {
         $obj = new AlphaOneAPI(CONFIG_FILE);
@@ -76,6 +84,24 @@ class AlphaOneAPITest extends TestCase
         $this->assertTrue(($obj instanceof AlphaOneAPI));
 
         $data = $obj->getApplicationsAcceptedList();
+        //print_r($data);
+        $this->assertTrue(is_array($data));
+
+        if (array_key_exists('List', $data)) {
+            foreach($data['List'] as $item) {
+                $this->assertArrayHasKey('AlphaID', $item);
+                $this->assertArrayHasKey('ConsentNumber', $item);
+                $this->assertArrayHasKey('ApplicationFlag', $item);
+                $this->assertArrayHasKey('RequestKey', $item);
+            }
+        }
+    }
+
+    public function test_accepted_apps_pagination() {
+        $obj = new AlphaOneAPI(CONFIG_FILE);
+        $this->assertTrue(($obj instanceof AlphaOneAPI));
+
+        $data = $obj->getApplicationsAcceptedList(2);
         //print_r($data);
         $this->assertTrue(is_array($data));
 
