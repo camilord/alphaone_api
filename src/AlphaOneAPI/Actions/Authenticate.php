@@ -27,9 +27,13 @@ class Authenticate extends BaseAction implements ActionInterface
     public function execute()
     {
         $url = $this->getConfig()->getApiUrl() . APIConstants::AUTHENTICATE;
-        $url .= "?username={$this->getConfig()->getUsername()}&key={$this->getConfig()->getSecretKey()}";
 
-        $response = Qurl::post($url);
+        $post_data = [
+            'username' => $this->getConfig()->getUsername(),
+            'key' => $this->getConfig()->getSecretKey()
+        ];
+
+        $response = Qurl::post($url, $post_data);
         $this->setServerResponse($response);
 
         return $this;
