@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1554538995">
-  <project timestamp="1554538995">
+<coverage generated="1554610042">
+  <project timestamp="1554610042">
     <package name="camilord\AlphaOneAPI">
       <file name="J:\localhost\github\alphaone_api\src\AlphaOneAPI/APIConfig.php">
         <class name="APIConfig" namespace="camilord\AlphaOneAPI" fullPackage="camilord" package="camilord">

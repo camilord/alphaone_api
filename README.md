@@ -1,6 +1,8 @@
 # AlphaOne API Library
  Use this library to integrate with AlphaOne Building Consent System
 
+[![codecov](https://codecov.io/gh/camilord/alphaone_api/branch/master/graph/badge.svg)](https://codecov.io/gh/camilord/alphaone_api)
+
 # Usage
 ```php
 <?php
