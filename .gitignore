@@ -4,3 +4,4 @@
 /codecov.sh
 /.idea
 /idea/*
+/gen_codecov.sh
