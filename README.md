@@ -7,7 +7,7 @@
 ```php
 <?php
 
-define('CONFIG_FILE', dirname(__DIR__).'/config.json');
+define('CONFIG_FILE', dirname(__FILE__).'/config.json');
 
 $obj = new AlphaOneAPI(CONFIG_FILE);
 $data = $obj->getProjectDetails(12);
