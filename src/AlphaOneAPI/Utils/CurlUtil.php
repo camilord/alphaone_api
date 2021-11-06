@@ -50,8 +50,8 @@ class CurlUtil
 
         if (!is_null($headers)) {
             $tmp = explode("Content-Type: application/json", $serverResponse);
-            $headerResponse = trim(@$tmp[0] . "\nContent-Type: application/json");
-            $serverResponse = trim(@$tmp[1]);
+            $headerResponse = trim((isset($tmp[0]) ? $tmp[0] : '') . "\nContent-Type: application/json");
+            $serverResponse = isset($tmp[1]) ? trim($tmp[1]) : '';
         }
 
         if ($str) {
@@ -87,8 +87,8 @@ class CurlUtil
 
         if (!is_null($headers)) {
             $tmp = explode("Content-Type: application/json", $serverResponse);
-            $headerResponse = trim(@$tmp[0] . "\nContent-Type: application/json");
-            $serverResponse = trim(@$tmp[1]);
+            $headerResponse = trim((isset($tmp[0]) ? $tmp[0] : '') . "\nContent-Type: application/json");
+            $serverResponse = isset($tmp[1]) ? trim($tmp[1]) : '';
         }
 
         if ($str) {

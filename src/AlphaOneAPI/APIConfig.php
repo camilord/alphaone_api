@@ -53,28 +53,28 @@ class APIConfig
      * @return string|null
      */
     public function getCouncilUrl() {
-        return @$this->config_array['CouncilUrl'];
+        return isset($this->config_array['CouncilUrl']) ? $this->config_array['CouncilUrl'] : null;
     }
 
     /**
      * @return string|null
      */
     public function getApiUrl() {
-        return @$this->config_array['APIUrl'];
+        return isset($this->config_array['APIUrl']) ? $this->config_array['APIUrl'] : null;
     }
 
     /**
      * @return string|null
      */
     public function getUsername() {
-        return @$this->config_array['Username'];
+        return isset($this->config_array['Username']) ? $this->config_array['Username'] : null;
     }
 
     /**
      * @return string|null
      */
     public function getSecretKey() {
-        return @$this->config_array['SecretKey'];
+        return isset($this->config_array['SecretKey']) ? $this->config_array['SecretKey'] : null;
     }
 
     // ============
